@@ -3,10 +3,10 @@
 アドネットワークの仕様として与えられた要件定義に基づいて構築を行いました。
 
 ## 使用言語・ライブラリなど
-Python3
-Gunicorn
-Flask
-Nginx
+Python3  
+Gunicorn  
+Flask  
+Nginx  
 
 
 ## 要件
@@ -19,7 +19,16 @@ Nginx
 
 
 ## 使用方法
-
+DSPサーバを複数立ち上げます。
+```bash
+$ bash run_dsp.sh
+```
+SSPサーバを立ち上げます
+```bash
+$ gunicorn ssp(サーバのファイル名):app --config guniconf.py(gunicornの設定ファイル)　
+```
+ssp_proは並列処理をプロセスで行います。  
+ssp_sureは並列処理をスレッドで行います。
 
 以下のＵＲＬには工夫点・成果などを載せています。
 https://tech-blog.fancs.com/entry/2018/09/12/ssp_by_python
